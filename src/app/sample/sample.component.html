@@ -1,0 +1,53 @@
+<div class="container">
+  <h2>Template-driven forms</h2>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+
+    <div class="form-group">
+      <label for="time">Time</label>
+      <ejs-timepicker name="time" class="form-control"
+        [(ngModel)]="user.time"
+        #time="ngModel" required
+        ></ejs-timepicker>
+    </div>
+
+    <div class="form-group">
+      <label for="date">DatePicker</label>
+      <ejs-datepicker name="date" class="form-control"
+        [(ngModel)]="user.date"
+        #date="ngModel" required
+        ></ejs-datepicker>
+    </div>
+
+    <div class="form-group">
+      <label for="date">DateTimePicker</label>
+      <ejs-datetimepicker name="datetime" class="form-control"
+        [(ngModel)]="user.datetime"
+        #datetime="ngModel" required
+        ></ejs-datetimepicker>
+    </div>
+
+     <div class="form-group">
+      <label for="range">DateRangePicker</label>
+      <ejs-daterangepicker name="range" class="form-control"
+        [(ngModel)]="user.range"
+        #range="ngModel" required
+        ></ejs-daterangepicker>
+    </div>
+
+    <button type="submit" class="btn btn-success"
+      >Submit</button>
+      <button type="reset" class="btn btn-success"
+      >Reset</button>
+  </form>
+
+
+  <pre>userForm.value: {{userForm.value | json}}</pre>
+  <pre>userForm.valid: {{userForm.valid}}</pre>
+
+</div>
+
+<style>
+  form {
+    margin-top: 50px;
+  }
+</style>
